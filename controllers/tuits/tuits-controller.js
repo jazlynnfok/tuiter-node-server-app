@@ -18,20 +18,20 @@ const findTuits  = async (req, res) => {
 }
 
 const updateTuit = async (req, res) => {
-    const tuitdIdToUpdate = req.params.tid; //get ID of tuit to update from path
+    const tuitIdToUpdate = req.params.id; //get ID of tuit to update from path
     const updates = req.body;  //get updates from HTTP body
     // const tuitIndex = tuits.findIndex((t) => //find index of tuit to update in the tuits array
     //   t._id === tuitdIdToUpdate);
     // tuits[tuitIndex] = //update the element in tuits array
     //     {...tuits[tuitIndex], ...updates} //merging/updating old tuit with updates
     // res.sendStatus(200); //respond with success
-    const status = await tuitsDao.updateTuit(tuitdIdToUpdate, updates); //status reports success or failure to update document from database
+    const status = await tuitsDao.updateTuit(tuitIdToUpdate, updates); //status reports success or failure to update document from database
     res.json(status);
 }
 
 const deleteTuit = async (req, res) => {
-    const tuitdIdToDelete = req.params.tid; //retrieve the ID of the tuit we want to remove
-    const status = await tuitsDao.deleteTuit(tuitdIdToDelete); //status reports success or failure to delete record from database
+    const tuitIdToDelete = req.params.id; //retrieve the ID of the tuit we want to remove
+    const status = await tuitsDao.deleteTuit(tuitIdToDelete); //status reports success or failure to delete record from database
     // tuits = tuits.filter(t => //filter out the tuit from the tuits array
     //   t._id !== tuitdIdToDelete);
     // res.sendStatus(200); //respond with success
