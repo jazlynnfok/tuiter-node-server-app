@@ -18,7 +18,7 @@ const findTuits  = async (req, res) => {
 }
 
 const updateTuit = async (req, res) => {
-    const tuitIdToUpdate = req.params.id; //get ID of tuit to update from path
+    const tuitIdToUpdate = req.params.tid; //get ID of tuit to update from path
     const updates = req.body;  //get updates from HTTP body
     // const tuitIndex = tuits.findIndex((t) => //find index of tuit to update in the tuits array
     //   t._id === tuitdIdToUpdate);
@@ -30,7 +30,7 @@ const updateTuit = async (req, res) => {
 }
 
 const deleteTuit = async (req, res) => {
-    const tuitIdToDelete = req.params.id; //retrieve the ID of the tuit we want to remove
+    const tuitIdToDelete = req.params.tid; //retrieve the ID of the tuit we want to remove
     const status = await tuitsDao.deleteTuit(tuitIdToDelete); //status reports success or failure to delete record from database
     // tuits = tuits.filter(t => //filter out the tuit from the tuits array
     //   t._id !== tuitdIdToDelete);
